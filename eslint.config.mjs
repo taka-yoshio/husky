@@ -22,7 +22,7 @@ export default [
   // カスタムルールの設定
   {
     rules: {
-      "no-console": "warn", // console.logの使用を警告
+      "no-console": "off", // console.logの使用を警告
       eqeqeq: ["error", "always"], // ===を強制
       "react/react-in-jsx-scope": "off", // React 17以降、jsxでReactをインポートしない設定
       // 他のカスタムルールをここに追加
