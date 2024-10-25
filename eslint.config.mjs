@@ -1,6 +1,6 @@
 import globals from "globals";
 import pluginJs from "@eslint/js";
-import pluginReact from "eslint-plugin-react";
+// import pluginReact from "eslint-plugin-react";
 
 export default [
   // 対象ファイルの指定
@@ -18,7 +18,7 @@ export default [
   },
   // ESLintとReactの推奨設定を追加
   pluginJs.configs.recommended,
-  pluginReact.configs.flat.recommended,
+  // pluginReact.configs.flat.recommended,
   // カスタムルールの設定
   {
     rules: {
