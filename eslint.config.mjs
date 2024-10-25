@@ -12,6 +12,7 @@ export default [
     languageOptions: {
       globals: {
         ...globals.browser, // ブラウザのグローバル変数
+        module: "readonly", // 'module' を読み取り専用のグローバル変数として追加
         // 必要に応じて他のグローバル変数を追加
       },
     },
