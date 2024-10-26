@@ -3,42 +3,47 @@ import pluginJs from "@eslint/js";
 import pluginImport from "eslint-plugin-import";
 
 export default [
-  // 対象ファイルの指定
+
+  // files:は監視する対象ファイルの設定
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
   },
-  // 使用するグローバル変数の設定
+
+  // languageOptions:はJavaScriptのグローバル変数や環境などの設定
   {
     languageOptions: {
       globals: {
-        ...globals.browser, // ブラウザのグローバル変数
-        module: "readonly", // 'module' を読み取り専用のグローバル変数として追加
-        // 必要に応じて他のグローバル変数を追加
+        ...globals.browser,
+        module: "readonly",
       },
     },
   },
-  // ESLintとReactの推奨設定を追加
+
+  // eslintの監視ルールを一括で設定できる
   pluginJs.configs.recommended,
-  // プラグインの定義をオブジェクト形式に変更
+
+  // plugins:はESLintに追加の機能やルールを提供する外部プラグインを定義
   {
     plugins: {
       import: pluginImport,
     },
   },
-  // カスタムルールの設定
+
+  // rules:は各種ルールの具体的な設定や強制内容を指定
+  // groups:はimport関係のルールを指定
+  // eqeqeq:は演算子のルール設定、==ではNG、===が必須となる
   {
     rules: {
-      "no-console": "off", // console.logの使用を警告
-      eqeqeq: ["error", "always"], // ===を強制
-      "react/react-in-jsx-scope": "off", // React 17以降、jsxでReactをインポートしない設定
-      "import/first": "error", // インポートはファイルの最初に
+      "no-console": "off",
+      eqeqeq: ["error", "always"],
+      "import/first": "error",
       "import/order": [
         "error",
         {
           groups: [
             ["builtin", "external", "internal", "parent", "sibling", "index"],
           ],
-          "newlines-between": "always", // グループ間に空行を強制
+          "newlines-between": "always",
         },
       ],
       // 他のカスタムルールをここに追加
