@@ -1,3 +1,2 @@
-// src/test.js
-const example = " aHello, World!";
+const example = "Hello, World!";
 console.log(example);
