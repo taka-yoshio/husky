@@ -19,7 +19,7 @@ JavaScriptおよびTypeScriptのコードに対して静的コード解析を行
 npm install husky@8 --save-dev  
 npm install eslint --save-dev  
 npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev  
-npm install --save-dev @commitlint/config-conventional @commitlint/cli
+npm install --save-dev @commitlint/config-conventional @commitlint/cli  
 npm install eslint-plugin-import --save-dev
 
 ■初期ファイルが作成される  
